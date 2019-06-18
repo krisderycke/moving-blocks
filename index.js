@@ -13,7 +13,8 @@ function myMove(e) {
     //makes block go right
     animalLeft += 10;
     animal.style.left = animalLeft + "px";
-    if (animalLeft >= 100) {
+    if (animalLeft >= window.innerWidth - 100) {
+      //window.innerWidth takes the size of the current winow (aka reponsiveness)
       animalLeft -= 10; //makes block stay in place
       console.log("max right");
     }
@@ -33,7 +34,7 @@ function myMove(e) {
     //makes block go down
     animalTop += 10;
     animal.style.top = animalTop + "px";
-    if (animalTop >= 525) {
+    if (animalTop >= window.innerHeight - 100) {
       animalTop -= 10;
       console.log("max bottom");
     }
@@ -52,4 +53,4 @@ function myMove(e) {
 
 //make food div spawn on random location
 
-document.onload = mySpawn;
+// document.onload = mySpawn;
