@@ -59,6 +59,11 @@ function mySpawn() {
   let maxHeight = window.innerHeight - food.offsetHeight;
   console.log("exc function mySpawn");
   console.log(maxWidth, maxHeight);
-
-
+  let randomWidth = Math.random() * maxWidth;
+  let randomHeight = Math.random() * maxHeight;
+  console.log(randomHeight, randomWidth);
+  food.style.left = randomWidth + "px";
+  food.style.top = randomHeight + "px";
+  console.log("poing");
+  food.innerHTML = "poing";
 }
