@@ -53,4 +53,12 @@ function myMove(e) {
 
 //make food div spawn on random location
 
-// document.onload = mySpawn;
+window.onload = mySpawn;
+function mySpawn() {
+  let maxWidth = window.innerWidth - food.offsetWidth;
+  let maxHeight = window.innerHeight - food.offsetHeight;
+  console.log("exc function mySpawn");
+  console.log(maxWidth, maxHeight);
+
+
+}

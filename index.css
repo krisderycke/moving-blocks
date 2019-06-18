@@ -9,8 +9,6 @@ body {
 #field {
   background-color: green;
   position: relative;
-  /* width: 1366px;
-  height: 625px; */
   width: 100vw;
   height: 100vh;
 }
@@ -22,6 +20,7 @@ body {
   height: 100px;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 #food {
