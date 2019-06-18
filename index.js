@@ -3,6 +3,9 @@ document.onkeydown = myMove;
 let animal = document.getElementById("animal");
 let animalLeft = 0;
 let animalTop = 0;
+let food = document.getElementById("food");
+let foodLeft = 0;
+let foodTop = 0;
 
 //keycodes are: left(37) right (39) up(38) down(40)
 function myMove(e) {
