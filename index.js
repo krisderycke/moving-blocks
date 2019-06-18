@@ -11,41 +11,45 @@ let foodTop = 0;
 function myMove(e) {
   if (e.keyCode == 39) {
     //makes block go right
-    animalLeft += 5;
+    animalLeft += 10;
     animal.style.left = animalLeft + "px";
-    if (animalLeft >= 1266) {
-      animalLeft -= 5;
+    if (animalLeft >= 100) {
+      animalLeft -= 10; //makes block stay in place
       console.log("max right");
     }
   }
 
   if (e.keyCode == 37) {
     //makes block go left
-    animalLeft -= 5;
+    animalLeft -= 10;
     animal.style.left = animalLeft + "px";
     if (animalLeft <= 1) {
-      animalLeft += 5;
+      animalLeft += 10;
       console.log("max left");
     }
   }
 
   if (e.keyCode == 40) {
     //makes block go down
-    animalTop += 5;
+    animalTop += 10;
     animal.style.top = animalTop + "px";
     if (animalTop >= 525) {
-      animalTop -= 5;
+      animalTop -= 10;
       console.log("max bottom");
     }
   }
 
   if (e.keyCode == 38) {
     // makes block go up
-    animalTop -= 5;
+    animalTop -= 10;
     animal.style.top = animalTop + "px";
     if (animalTop <= 1) {
-      animalTop += 5;
+      animalTop += 10;
       console.log("max top");
     }
   }
 }
+
+//make food div spawn on random location
+
+document.onload = mySpawn;
