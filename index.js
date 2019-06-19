@@ -64,32 +64,35 @@ function mySpawn() {
   console.log("poing");
 }
 
-//check whether moving block has same position as food
-
 document.onkeyup = eatFood;
+//check if there is a collision, written better than the function below in comment
+//as seen on : https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 function eatFood() {
-  var sizeAnimal = animal.getBoundingClientRect();
-  var animalTop = sizeAnimal.top;
-  var animalBottom = sizeAnimal.bottom;
-  var animalLeft = sizeAnimal.left;
-  var animalRight = sizeAnimal.right;
-  console.log(
-    `animal ${animalTop} , ${animalRight}, ${animalBottom}, ${animalLeft} `
-  );
-
-  var sizeFood = food.getBoundingClientRect();
-  var foodTop = sizeFood.top;
-  var foodBottom = sizeFood.bottom;
-  var foodLeft = sizeFood.left;
-  var foodRight = sizeFood.right;
-  console.log(`${foodTop} , ${foodRight}, ${foodBottom}, ${foodLeft} `);
-
-  if (
-    animalLeft <= foodLeft &&
-    animalTop <= foodTop &&
-    animalRight >= foodRight &&
-    animalBottom >= foodBottom
-  ) {
-    mySpawn();
-  }
+  var animalMeasures = { x: 1 };
 }
+
+// function eatFood() {
+//   var sizeAnimal = animal.getBoundingClientRect();
+//   var animalTop = sizeAnimal.top;
+//   var animalBottom = sizeAnimal.bottom;
+//   var animalLeft = sizeAnimal.left;
+//   var animalRight = sizeAnimal.right;
+//   console.log(
+//     `animal ${animalTop} , ${animalRight}, ${animalBottom}, ${animalLeft} `
+//   );
+
+//   var sizeFood = food.getBoundingClientRect();
+//   var foodTop = sizeFood.top;
+//   var foodBottom = sizeFood.bottom;
+//   var foodLeft = sizeFood.left;
+//   var foodRight = sizeFood.right;
+//   console.log(`${foodTop} , ${foodRight}, ${foodBottom}, ${foodLeft} `);
+
+//   if (
+//     animalLeft <= foodLeft &&
+//     animalTop <= foodTop &&
+//     animalRight >= foodRight &&
+//     animalBottom >= foodBottom
+//   ) {
+//     mySpawn();
+//
