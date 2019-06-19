@@ -73,18 +73,23 @@ function eatFood() {
   var animalBottom = sizeAnimal.bottom;
   var animalLeft = sizeAnimal.left;
   var animalRight = sizeAnimal.right;
-  console.log(`${animalTop} , ${animalRight}, ${animalBottom}, ${animalLeft} `);
+  console.log(
+    `animal ${animalTop} , ${animalRight}, ${animalBottom}, ${animalLeft} `
+  );
 
   var sizeFood = food.getBoundingClientRect();
   var foodTop = sizeFood.top;
   var foodBottom = sizeFood.bottom;
   var foodLeft = sizeFood.left;
   var foodRight = sizeFood.right;
+  console.log(`${foodTop} , ${foodRight}, ${foodBottom}, ${foodLeft} `);
 
   if (
-    food.style.left == animal.style.left &&
-    food.style.top == animal.style.top
+    animalLeft <= foodLeft &&
+    animalTop <= foodTop &&
+    animalRight >= foodRight
+    // animalBottom >= foodBottom
   ) {
-    alert("gotcha!");
+    mySpawn();
   }
 }
