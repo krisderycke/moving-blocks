@@ -20,7 +20,7 @@ body {
   height: 100px;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 5;
 }
 
 #food {
@@ -28,5 +28,12 @@ body {
   background-color: orange;
   width: 50px;
   height: 50px;
+  z-index: 1;
   /* display: none;  */
+}
+
+#counter {
+  text-align: center;
+  font-size: 3em;
+  z-index: 10010;
 }

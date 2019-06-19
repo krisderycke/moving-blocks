@@ -87,8 +87,8 @@ function eatFood() {
   if (
     animalLeft <= foodLeft &&
     animalTop <= foodTop &&
-    animalRight >= foodRight
-    // animalBottom >= foodBottom
+    animalRight >= foodRight &&
+    animalBottom >= foodBottom
   ) {
     mySpawn();
   }
