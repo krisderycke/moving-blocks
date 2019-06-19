@@ -55,11 +55,10 @@ window.onload = mySpawn;
 function mySpawn() {
   let maxWidth = window.innerWidth - food.offsetWidth;
   let maxHeight = window.innerHeight - food.offsetHeight;
-  console.log("exc function mySpawn");
   console.log(maxWidth, maxHeight);
-  let randomWidth = Math.floor((Math.random() * maxWidth) / 5) * 2; //gedeeld door 5,maal 2: om een even getal uit te komen in stapjes van 10px
-  let randomHeight = Math.floor((Math.random() * maxHeight) / 5) * 2;
-  console.log(randomHeight, randomWidth);
+  let randomWidth = Math.floor(Math.random() * maxWidth); //gedeeld door 5,maal 2: om een even getal uit te komen in stapjes van 10px
+  let randomHeight = Math.floor(Math.random() * maxHeight);
+  console.log("height" + randomHeight, "width" + randomWidth);
   food.style.left = randomWidth + "px";
   food.style.top = randomHeight + "px";
   console.log("poing");
@@ -67,9 +66,25 @@ function mySpawn() {
 
 //check whether moving block has same position as food
 
-document.onkeyup = samePosition;
-function samePosition() {
-  if (food.style.left === animal.style.left) {
+document.onkeyup = eatFood;
+function eatFood() {
+  var sizeAnimal = animal.getBoundingClientRect();
+  var animalTop = sizeAnimal.top;
+  var animalBottom = sizeAnimal.bottom;
+  var animalLeft = sizeAnimal.left;
+  var animalRight = sizeAnimal.right;
+  console.log(`${animalTop} , ${animalRight}, ${animalBottom}, ${animalLeft} `);
+
+  var sizeFood = food.getBoundingClientRect();
+  var foodTop = sizeFood.top;
+  var foodBottom = sizeFood.bottom;
+  var foodLeft = sizeFood.left;
+  var foodRight = sizeFood.right;
+
+  if (
+    food.style.left == animal.style.left &&
+    food.style.top == animal.style.top
+  ) {
     alert("gotcha!");
   }
 }
