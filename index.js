@@ -68,7 +68,31 @@ document.onkeyup = eatFood;
 //check if there is a collision, written better than the function below in comment
 //as seen on : https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 function eatFood() {
-  var animalMeasures = { x: 1 };
+  var sizeAnimal = animal.getBoundingClientRect();
+  var sizeFood = food.getBoundingClientRect();
+  var animalMeasures = {
+    x: sizeAnimal.x,
+    y: sizeAnimal.y,
+    width: sizeAnimal.width,
+    height: sizeAnimal.height
+  };
+  var foodMeasures = {
+    x: sizeFood.x,
+    y: sizeFood.y,
+    width: sizeFood.width,
+    height: sizeFood.height
+  };
+
+  if (
+    animalMeasures.x < foodMeasures.x + foodMeasures.width && //foodX + foodWidt bepaalt het verste punt van het element
+    animalMeasures.x + animalMeasures.width > foodMeasures.x &&
+    animalMeasures.y < foodMeasures.y + foodMeasures.height &&
+    animalMeasures.y + animalMeasures.height > foodMeasures.y
+  ) {
+    // mySpawn();
+    console.log(animalMeasures, foodMeasures);
+    alert("njom njom");
+  }
 }
 
 // function eatFood() {
