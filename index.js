@@ -58,8 +58,8 @@ function mySpawn() {
   food.style.display = "block";
   let maxWidth = window.innerWidth - food.offsetWidth;
   let maxHeight = window.innerHeight - food.offsetHeight;
-  console.log(maxWidth, maxHeight);
-  let randomWidth = Math.floor(Math.random() * maxWidth); //gedeeld door 5,maal 2: om een even getal uit te komen in stapjes van 10px
+  //console.log(maxWidth, maxHeight);
+  let randomWidth = Math.floor(Math.random() * maxWidth);
   let randomHeight = Math.floor(Math.random() * maxHeight);
   console.log("height" + randomHeight, "width" + randomWidth);
   food.style.left = randomWidth + "px";
@@ -70,7 +70,7 @@ function mySpawn() {
 //check if there is a collision, written better than the function below in comment
 //as seen on : https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 function eatFood() {
-  var sizeAnimal = animal.getBoundingClientRect();
+  var sizeAnimal = animal.getBoundingClientRect(); // extracts coordinates of the div and put thm in an algoritm
   var sizeFood = food.getBoundingClientRect();
   var animalMeasures = {
     x: sizeAnimal.x,
