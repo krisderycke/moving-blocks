@@ -1,9 +1,12 @@
-document.onkeydown = myMove;
+document.addEventListener("keydown", myMove);
+document.addEventListener("keydown", eatFood);
+window.addEventListener("load", mySpawn);
 
 let animal = document.getElementById("animal");
 let animalLeft = 0;
 let animalTop = 0;
 let food = document.getElementById("food");
+let score = 0;
 
 //keycodes are: left(37) right (39) up(38) down(40)
 function myMove(e) {
@@ -51,8 +54,8 @@ function myMove(e) {
 
 //make food div spawn on random location
 
-window.onload = mySpawn;
 function mySpawn() {
+  food.style.display = "block";
   let maxWidth = window.innerWidth - food.offsetWidth;
   let maxHeight = window.innerHeight - food.offsetHeight;
   console.log(maxWidth, maxHeight);
@@ -64,7 +67,6 @@ function mySpawn() {
   console.log("poing");
 }
 
-document.onkeyup = eatFood;
 //check if there is a collision, written better than the function below in comment
 //as seen on : https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 function eatFood() {
@@ -89,9 +91,14 @@ function eatFood() {
     animalMeasures.y < foodMeasures.y + foodMeasures.height &&
     animalMeasures.y + animalMeasures.height > foodMeasures.y
   ) {
-    // mySpawn();
-    console.log(animalMeasures, foodMeasures);
-    alert("njom njom");
+    mySpawn();
+    countScore();
+  }
+
+  function countScore() {
+    score++;
+    document.getElementById("score").innerHTML = score;
+    console.log(score);
   }
 }
 
