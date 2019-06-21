@@ -11,7 +11,7 @@ let animal = document.getElementById("animal");
 let animalLeft = 0;
 let animalTop = 0;
 let food = document.getElementById("food");
-let score = 0;
+let score = 19; ///////// set score back to 0!!!!!!!!!
 
 //keycodes are: left(37) right (39) up(38) down(40)
 function myMove(e) {
@@ -137,10 +137,14 @@ function endGame() {
 }
 
 function final() {
-  var win = document.createElement("div");
+  document.getElementById("counter").style.display = "none";
+  food.style.display = "none";
+  var win = document.createElement("h3");
   win.id = "win";
   win.innerHTML = "Aye, got me undies back! Cheers laddie.";
   field.appendChild(win);
+  win.className = "win";
+  animal.setAttribute("id", "happy");
 }
 // function eatFood() {
 //   var sizeAnimal = animal.getBoundingClientRect();
