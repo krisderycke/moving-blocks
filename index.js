@@ -1,6 +1,10 @@
 document.addEventListener("keydown", myMove);
 document.addEventListener("keydown", eatFood);
 window.addEventListener("load", mySpawn);
+window.addEventListener(
+  "load",
+  alert("Aaaargh, where's me undies?!\nHelp me find'em!")
+);
 
 let animal = document.getElementById("animal");
 let animalLeft = 0;
