@@ -6,6 +6,7 @@ window.addEventListener(
   alert("Aaaargh, where's me undies?!\nHelp me find'em!")
 );
 
+let field = document.getElementById("field");
 let animal = document.getElementById("animal");
 let animalLeft = 0;
 let animalTop = 0;
@@ -103,15 +104,23 @@ function eatFood() {
     score++;
     document.getElementById("score").innerHTML = score;
     console.log(score);
-    if (score == 5) {
-      alert("level2");
-      level2();
+    switch (score) {
+      case 5:
+        level2();
+        alert("level2");
+        break;
+      case 10:
+        level3();
+        alert("level3");
+        break;
+      case 15:
+        endGame();
+        alert("Almost there");
+        break;
+      case 20:
+        final();
+        break;
     }
-    if (score == 10) {
-      alert("level 3");
-      level3();
-    }
-    if 
   }
 }
 function level2() {
@@ -120,6 +129,15 @@ function level2() {
 
 function level3() {
   food.style.opacity = "0.5";
+}
+
+function endGame() {
+  food.style.opacity = "0.2";
+}
+
+function final() {
+  var win = document.createElement(div);
+  win.id = "win";
 }
 // function eatFood() {
 //   var sizeAnimal = animal.getBoundingClientRect();
