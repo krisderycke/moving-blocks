@@ -103,9 +103,24 @@ function eatFood() {
     score++;
     document.getElementById("score").innerHTML = score;
     console.log(score);
+    if (score == 5) {
+      alert("level2");
+      level2();
+    }
+    if (score == 10) {
+      alert("level 3");
+      level3();
+    }
+    if 
   }
 }
+function level2() {
+  food.style.opacity = "0.7";
+}
 
+function level3() {
+  food.style.opacity = "0.5";
+}
 // function eatFood() {
 //   var sizeAnimal = animal.getBoundingClientRect();
 //   var animalTop = sizeAnimal.top;
