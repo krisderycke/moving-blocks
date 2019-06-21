@@ -11,7 +11,7 @@ let animal = document.getElementById("animal");
 let animalLeft = 0;
 let animalTop = 0;
 let food = document.getElementById("food");
-let score = 0; ///////// set score back to 0!!!!!!!!!
+let score = 0;
 
 //keycodes are: left(37) right (39) up(38) down(40)
 function myMove(e) {
@@ -70,6 +70,7 @@ function mySpawn() {
   food.style.left = randomWidth + "px";
   food.style.top = randomHeight + "px";
   console.log("poing");
+  console.log(score)
 }
 
 //check if there is a collision, written better than the function below in comment
