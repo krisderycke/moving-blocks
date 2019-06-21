@@ -99,30 +99,31 @@ function eatFood() {
     mySpawn();
     countScore();
   }
+}
 
-  function countScore() {
-    score++;
-    document.getElementById("score").innerHTML = score;
-    console.log(score);
-    switch (score) {
-      case 5:
-        level2();
-        alert("level2");
-        break;
-      case 10:
-        level3();
-        alert("level3");
-        break;
-      case 15:
-        endGame();
-        alert("Almost there");
-        break;
-      case 20:
-        final();
-        break;
-    }
+function countScore() {
+  score++;
+  document.getElementById("score").innerHTML = score;
+  console.log(score);
+  switch (score) {
+    case 5:
+      level2();
+      alert("level2");
+      break;
+    case 10:
+      level3();
+      alert("level3");
+      break;
+    case 15:
+      endGame();
+      alert("Almost there");
+      break;
+    case 20:
+      final();
+      break;
   }
 }
+
 function level2() {
   food.style.opacity = "0.7";
 }
@@ -136,8 +137,10 @@ function endGame() {
 }
 
 function final() {
-  var win = document.createElement(div);
+  var win = document.createElement("div");
   win.id = "win";
+  win.innerHTML = "Aye, got me undies back! Cheers laddie.";
+  field.appendChild(win);
 }
 // function eatFood() {
 //   var sizeAnimal = animal.getBoundingClientRect();
