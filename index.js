@@ -3,7 +3,7 @@ document.addEventListener("keydown", eatFood);
 window.addEventListener("load", mySpawn);
 window.addEventListener(
   "load",
-  alert("Aaaargh, where's me undies?!\nHelp me find'em!")
+  alert("Aaaargh, where's me undies?!\nHelp me find'em!\nUse the keyboard arrows to guide me.")
 );
 
 let field = document.getElementById("field");
